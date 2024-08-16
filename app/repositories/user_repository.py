@@ -39,8 +39,7 @@ class UserRepository:
 
         try:
             new_user = User(
-                email=data.get('email'),  # Access dictionary items with .get() method
-                password=data.get('password'),
+                password_hash=data.get('password'),
                 name=data.get('name'),
                 role=data.get('role')
             )

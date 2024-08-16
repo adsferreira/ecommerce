@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89dd21c9-f279-48fb-93bd-08ded63c16cd" name="Changes" comment="Inital sqlite database.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="89dd21c9-f279-48fb-93bd-08ded63c16cd" name="Changes" comment="Initial login endpoint providing login functionality.">
+      <change beforePath="$PROJECT_DIR$/app/routes/auth_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/auth_routes.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,7 +162,31 @@
       <option name="project" value="LOCAL" />
       <updated>1723826579513</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Initial User model holding the persona of Users of the e-commerce system.">
+      <option name="closed" value="true" />
+      <created>1723828557633</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1723828557633</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Initial login endpoint providing login functionality.">
+      <option name="closed" value="true" />
+      <created>1723828710491</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1723828710491</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Initial login endpoint providing login functionality.">
+      <option name="closed" value="true" />
+      <created>1723828737638</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1723828737638</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -179,6 +203,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Inital code base of the e-commerce system. This current version do not support authentication and lacks unit tests." />
     <MESSAGE value="Inital sqlite database." />
-    <option name="LAST_COMMIT_MESSAGE" value="Inital sqlite database." />
+    <MESSAGE value="Initial User model holding the persona of Users of the e-commerce system." />
+    <MESSAGE value="Initial login endpoint providing login functionality." />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial login endpoint providing login functionality." />
   </component>
 </project>

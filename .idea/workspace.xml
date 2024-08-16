@@ -4,49 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89dd21c9-f279-48fb-93bd-08ded63c16cd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/ecommerce.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/customer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/customer_order.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/department.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/order_items.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/product.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/repositories/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/repositories/customer_order_repository.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/repositories/customer_repository.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/repositories/department_repository.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/repositories/order_items_repository.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/repositories/product_repository.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routes/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routes/customer_order_routes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routes/customer_routes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routes/department_routes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routes/order_items_routes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routes/product_routes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/services/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/services/customer_order_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/services/customer_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/services/department_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/services/order_items_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/services/product_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/tests/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/tests/test_customer_order_routes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/tests/test_customer_routes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/tests/test_department_routes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/tests/test_order_items_routes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/tests/test_product_routes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/__init__.py" afterDir="false" />
+    <list default="true" id="89dd21c9-f279-48fb-93bd-08ded63c16cd" name="Changes" comment="Inital sqlite database.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,6 +146,23 @@
       <option name="presentableId" value="Default" />
       <updated>1723779759629</updated>
     </task>
+    <task id="LOCAL-00001" summary="Inital code base of the e-commerce system. This current version do not support authentication and lacks unit tests.">
+      <option name="closed" value="true" />
+      <created>1723826517128</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1723826517128</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Inital sqlite database.">
+      <option name="closed" value="true" />
+      <created>1723826579513</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1723826579513</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -199,5 +175,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Inital code base of the e-commerce system. This current version do not support authentication and lacks unit tests." />
+    <MESSAGE value="Inital sqlite database." />
+    <option name="LAST_COMMIT_MESSAGE" value="Inital sqlite database." />
   </component>
 </project>

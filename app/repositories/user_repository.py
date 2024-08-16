@@ -1,3 +1,5 @@
+from sqlalchemy.exc import SQLAlchemyError
+
 from app.models.user import User
 from app import db
 
@@ -49,3 +51,17 @@ class UserRepository:
         db.session.add(new_user)
         db.session.commit()
         return new_user
+
+    @staticmethod
+    def find_by_username(username):
+        return User.query.filter_by(username=username).first()
+
+    @staticmethod
+    def save(user):
+        try:
+            db.session.add(user)
+            db.session.commit()
+            return user, None
+        except SQLAlchemyError as e:
+            db.session.rollback()
+            return None, str(e)

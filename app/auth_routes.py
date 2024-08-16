@@ -3,6 +3,7 @@ from flask_jwt_extended import jwt_required, get_jwt_identity
 
 from app.models.user import User
 from app import db
+from app.services.auth_service import AuthService
 
 auth_bp = Blueprint('auth_bp', __name__)
 
@@ -37,4 +38,18 @@ def login():
 def profile():
     user_id = get_jwt_identity()
     response, status_code = AuthService.get_user(user_id)
+    return jsonify(response), status_code
+
+@auth_bp.route('/register-admin', methods=['POST'])
+@jwt_required()
+def register_admin():
+    """Register a new admin (requires admin privileges)."""
+    current_user_id = get_jwt_identity()
+    current_user = User.query.get(current_user_id)
+
+    if current_user.role != 'admin':
+        return jsonify({"error": "Admin privileges required."}), 403
+
+    data = request.json
+    response, status_code = AuthService.register_admin(data)
     return jsonify(response), status_code

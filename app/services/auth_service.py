@@ -1,3 +1,4 @@
+from app.models.user import User
 from app.repositories.user_repository import UserRepository
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_jwt_extended import create_access_token, create_refresh_token
@@ -69,3 +70,27 @@ class AuthService:
             "name": user.name,
             "role": user.role
         }, 200
+
+    @staticmethod
+    def register_admin(data):
+        """Register a new admin user."""
+        # Check if the username already exists
+        if UserRepository.find_by_username(data['username']):
+            return {"error": "Username already exists."}, 400
+
+        # Create a new admin user
+        new_admin = User(
+            username=data['username'],
+            role='admin'
+        )
+        new_admin.set_password(data['password'])
+
+        # Save the new admin
+        saved_admin, error = UserRepository.save(new_admin)
+        if error:
+            return {"error": error}, 500
+
+        return {
+            "message": "Admin registered successfully.",
+            "admin": saved_admin.as_dict()
+        }, 201

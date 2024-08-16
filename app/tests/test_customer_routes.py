@@ -8,7 +8,7 @@ from app.models.customer import Customer
 def client():
     app = create_app()
     app.config['TESTING'] = True
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///ecommerce.db'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
     with app.test_client() as client:

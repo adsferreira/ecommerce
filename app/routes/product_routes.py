@@ -1,5 +1,6 @@
 from flask import Blueprint, request, jsonify
 from app.services.product_service import ProductService
+from app.auth_decorators import role_required
 
 product_bp = Blueprint('product', __name__)
 
@@ -18,6 +19,7 @@ def get_product_by_id(prod_id):
     return jsonify({'message': 'Product not found'}), 404
 
 @product_bp.route('/routes/products', methods=['POST'])
+@role_required('admin')
 def add_product():
     """Add a new product."""
     data = request.json
@@ -25,6 +27,7 @@ def add_product():
     return jsonify(product.as_dict()), 201
 
 @product_bp.route('/routes/products/<int:prod_id>', methods=['PUT'])
+@role_required('admin')
 def update_product(prod_id):
     """Update an existing product."""
     data = request.json
@@ -34,6 +37,7 @@ def update_product(prod_id):
     return jsonify({'message': 'Product not found'}), 404
 
 @product_bp.route('/routes/products/<int:prod_id>', methods=['DELETE'])
+@role_required('admin')
 def delete_product(prod_id):
     """Delete a product."""
     product = ProductService.delete_product(prod_id)

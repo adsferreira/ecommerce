@@ -18,15 +18,13 @@ class CustomerRepository:
     def add_customer(data):
         """Add a new customer."""
         new_customer = Customer(
-            cusFirstName=data['cusFirstName'],
-            cusLastName=data['cusLastName'],
-            cusEmail=data['cusEmail'],
             cusAddress=data['cusAddress'],
             cusCity=data['cusCity'],
             cusState=data['cusState'],
             cusCountry=data['cusCountry'],
             cusPostalCode=data['cusPostalCode'],
-            cusPhoneNumber=data.get('cusPhoneNumber')
+            cusPhoneNumber=data.get('cusPhoneNumber'),
+            usrId=data['usrId']
         )
         db.session.add(new_customer)
         db.session.commit()
@@ -37,9 +35,6 @@ class CustomerRepository:
         """Update an existing customer."""
         customer = Customer.query.get(cus_id)
         if customer:
-            customer.cusFirstName = data.get('cusFirstName', customer.cusFirstName)
-            customer.cusLastName = data.get('cusLastName', customer.cusLastName)
-            customer.cusEmail = data.get('cusEmail', customer.cusEmail)
             customer.cusAddress = data.get('cusAddress', customer.cusAddress)
             customer.cusCity = data.get('cusCity', customer.cusCity)
             customer.cusState = data.get('cusState', customer.cusState)

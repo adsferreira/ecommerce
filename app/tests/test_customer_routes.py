@@ -25,15 +25,13 @@ def test_get_all_customers(client):
 
 def test_add_customer(client):
     data = {
-        'cusFirstName': 'John',
-        'cusLastName': 'Doe',
-        'cusEmail': 'john.doe@example.com',
         'cusAddress': '123 Elm St',
         'cusCity': 'Springfield',
         'cusState': 'IL',
         'cusCountry': 'USA',
         'cusPostalCode': '62701',
-        'cusPhoneNumber': '555-1234'
+        'cusPhoneNumber': '555-1234',
+        'usrId': 1
     }
     response = client.post('/routes/customers', json=data)
 
@@ -50,15 +48,13 @@ def test_add_customer(client):
 def test_get_customer_by_id(client):
     # Add a customer first
     customer = Customer(
-        cusFirstName='Jane',
-        cusLastName='Smith',
-        cusEmail='jane.smith@example.com',
         cusAddress='456 Oak St',
         cusCity='Shelbyville',
         cusState='IL',
         cusCountry='USA',
         cusPostalCode='62565',
-        cusPhoneNumber='555-5678'
+        cusPhoneNumber='555-5678',
+        usrId=2
     )
     db.session.add(customer)
     db.session.commit()
@@ -70,29 +66,25 @@ def test_get_customer_by_id(client):
 def test_update_customer(client):
     # Add a customer first
     customer = Customer(
-        cusFirstName='Alice',
-        cusLastName='Johnson',
-        cusEmail='alice.johnson@example.com',
         cusAddress='789 Pine St',
         cusCity='Capital City',
         cusState='IL',
         cusCountry='USA',
         cusPostalCode='62704',
-        cusPhoneNumber='555-9876'
+        cusPhoneNumber='555-9876',
+        usrId=3
     )
     db.session.add(customer)
     db.session.commit()
 
     data = {
-        'cusFirstName': 'Alice',
-        'cusLastName': 'Doe',
-        'cusEmail': 'alice.doe@example.com',
         'cusAddress': '789 Pine St',
         'cusCity': 'Capital City',
         'cusState': 'IL',
         'cusCountry': 'USA',
         'cusPostalCode': '62704',
-        'cusPhoneNumber': '555-1234'
+        'cusPhoneNumber': '555-1234',
+        'usrId': 3
     }
     response = client.put(f'/api/customers/{customer.cusId}', json=data)
     assert response.status_code == 200
@@ -101,15 +93,13 @@ def test_update_customer(client):
 def test_delete_customer(client):
     # Add a customer first
     customer = Customer(
-        cusFirstName='Bob',
-        cusLastName='Brown',
-        cusEmail='bob.brown@example.com',
         cusAddress='321 Birch St',
         cusCity='Metropolis',
         cusState='IL',
         cusCountry='USA',
         cusPostalCode='62960',
-        cusPhoneNumber='555-4321'
+        cusPhoneNumber='555-4321',
+        usrId=4
     )
     db.session.add(customer)
     db.session.commit()

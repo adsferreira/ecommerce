@@ -51,5 +51,7 @@ def register_admin():
         return jsonify({"error": "Admin privileges required."}), 403
 
     data = request.json
-    response, status_code = AuthService.register_admin(data)
+    username = data.get('username')
+    password = data.get('password')
+    response, status_code = AuthService.register_admin(username, password)
     return jsonify(response), status_code

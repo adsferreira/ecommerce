@@ -1,3 +1,6 @@
+from sqlalchemy.exc import SQLAlchemyError
+
+from app import db
 from app.models.user import User
 from app.repositories.user_repository import UserRepository
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -72,25 +75,25 @@ class AuthService:
         }, 200
 
     @staticmethod
-    def register_admin(data):
+    def register_admin(username, password):
         """Register a new admin user."""
-        # Check if the username already exists
-        if UserRepository.find_by_username(data['username']):
-            return {"error": "Username already exists."}, 400
+        try:
+            if User.query.filter_by(username=username).first():
+                return {"error": "Username already exists."}, 400
 
-        # Create a new admin user
-        new_admin = User(
-            username=data['username'],
-            role='admin'
-        )
-        new_admin.set_password(data['password'])
+            new_admin = User(
+                username=username,
+                role='admin'
+            )
+            new_admin.set_password(password)
+            db.session.add(new_admin)
+            db.session.commit()
 
-        # Save the new admin
-        saved_admin, error = UserRepository.save(new_admin)
-        if error:
-            return {"error": error}, 500
+            return {
+                "message": "Admin registered successfully.",
+                "admin": new_admin.as_dict()
+            }, 201
 
-        return {
-            "message": "Admin registered successfully.",
-            "admin": saved_admin.as_dict()
-        }, 201
+        except SQLAlchemyError as e:
+            db.session.rollback()
+            return {"error": str(e)}, 500

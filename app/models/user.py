@@ -6,7 +6,7 @@ class User(db.Model):
     __tablename__ = 'user'
 
     id = Column(Integer, primary_key=True)
-    username = Column(String(50), unique=True, nullable=False)
+    name = Column(String(50), unique=True, nullable=False)
     password_hash = Column(String(128), nullable=False)
     role = Column(String(50), nullable=False)  # e.g., 'user' or 'admin'
 

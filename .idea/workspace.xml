@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89dd21c9-f279-48fb-93bd-08ded63c16cd" name="Changes" comment="Including the authorization blueprint and JWT (JSON Web Token) for improve the security of transmitting information.">
+    <list default="true" id="89dd21c9-f279-48fb-93bd-08ded63c16cd" name="Changes" comment="Added Flask-JWT-Extended requirement in the 'requirements.txt' file.">
+      <change afterPath="$PROJECT_DIR$/app/repositories/user_repository.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/services/auth_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/product_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/product_routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/auth_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/auth_routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,7 +219,23 @@
       <option name="project" value="LOCAL" />
       <updated>1723830385802</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Decorating the product endpoints with role_required in order to give the right access according to the user in the session.">
+      <option name="closed" value="true" />
+      <created>1723830540298</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1723830540298</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Added Flask-JWT-Extended requirement in the 'requirements.txt' file.">
+      <option name="closed" value="true" />
+      <created>1723830594863</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1723830594863</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -239,6 +257,8 @@
     <MESSAGE value="Initial authorization decorator defining the role required for specific functions of the e-commerce system." />
     <MESSAGE value="Placing the authorization API on the root directory in order to keep a smaller URL when users want to log in." />
     <MESSAGE value="Including the authorization blueprint and JWT (JSON Web Token) for improve the security of transmitting information." />
-    <option name="LAST_COMMIT_MESSAGE" value="Including the authorization blueprint and JWT (JSON Web Token) for improve the security of transmitting information." />
+    <MESSAGE value="Decorating the product endpoints with role_required in order to give the right access according to the user in the session." />
+    <MESSAGE value="Added Flask-JWT-Extended requirement in the 'requirements.txt' file." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Flask-JWT-Extended requirement in the 'requirements.txt' file." />
   </component>
 </project>

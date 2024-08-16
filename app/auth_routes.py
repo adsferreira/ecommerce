@@ -1,4 +1,6 @@
 from flask import Blueprint, request, jsonify
+from flask_jwt_extended import jwt_required, get_jwt_identity
+
 from app.models.user import User
 from app import db
 
@@ -29,3 +31,10 @@ def login():
     if user and user.check_password(password):
         return jsonify({"message": "Login successful", "user": user.as_dict()}), 200
     return jsonify({"error": "Invalid credentials"}), 401
+
+@auth_bp.route('/profile', methods=['GET'])
+@jwt_required()
+def profile():
+    user_id = get_jwt_identity()
+    response, status_code = AuthService.get_user(user_id)
+    return jsonify(response), status_code

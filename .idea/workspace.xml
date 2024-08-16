@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89dd21c9-f279-48fb-93bd-08ded63c16cd" name="Changes" comment="Initial login endpoint providing login functionality.">
-      <change beforePath="$PROJECT_DIR$/app/routes/auth_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/auth_routes.py" afterDir="false" />
+    <list default="true" id="89dd21c9-f279-48fb-93bd-08ded63c16cd" name="Changes" comment="Including the authorization blueprint and JWT (JSON Web Token) for improve the security of transmitting information.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/product_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/product_routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +55,11 @@
     &quot;git-widget-placeholder&quot;: &quot;master&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app" />
+    </key>
+  </component>
   <component name="RunManager" selected="Python.manage">
     <configuration name="manage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ecommerce" />
@@ -186,7 +193,31 @@
       <option name="project" value="LOCAL" />
       <updated>1723828737638</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Initial authorization decorator defining the role required for specific functions of the e-commerce system.">
+      <option name="closed" value="true" />
+      <created>1723829069110</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1723829069110</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Placing the authorization API on the root directory in order to keep a smaller URL when users want to log in.">
+      <option name="closed" value="true" />
+      <created>1723829162622</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1723829162622</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Including the authorization blueprint and JWT (JSON Web Token) for improve the security of transmitting information.">
+      <option name="closed" value="true" />
+      <created>1723830385802</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1723830385802</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -205,6 +236,9 @@
     <MESSAGE value="Inital sqlite database." />
     <MESSAGE value="Initial User model holding the persona of Users of the e-commerce system." />
     <MESSAGE value="Initial login endpoint providing login functionality." />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial login endpoint providing login functionality." />
+    <MESSAGE value="Initial authorization decorator defining the role required for specific functions of the e-commerce system." />
+    <MESSAGE value="Placing the authorization API on the root directory in order to keep a smaller URL when users want to log in." />
+    <MESSAGE value="Including the authorization blueprint and JWT (JSON Web Token) for improve the security of transmitting information." />
+    <option name="LAST_COMMIT_MESSAGE" value="Including the authorization blueprint and JWT (JSON Web Token) for improve the security of transmitting information." />
   </component>
 </project>

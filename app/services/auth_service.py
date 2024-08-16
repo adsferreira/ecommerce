@@ -1,6 +1,5 @@
 from sqlalchemy.exc import SQLAlchemyError
 
-from app import db
 from app.models.user import User
 from app.repositories.user_repository import UserRepository
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -78,7 +77,7 @@ class AuthService:
     def register_admin(username, password):
         """Register a new admin user."""
         try:
-            if User.query.filter_by(username=username).first():
+            if UserRepository.find_by_username(username):
                 return {"error": "Username already exists."}, 400
 
             new_admin = User(
@@ -86,8 +85,7 @@ class AuthService:
                 role='admin'
             )
             new_admin.set_password(password)
-            db.session.add(new_admin)
-            db.session.commit()
+            UserRepository.create_user(new_admin)
 
             return {
                 "message": "Admin registered successfully.",
@@ -95,5 +93,4 @@ class AuthService:
             }, 201
 
         except SQLAlchemyError as e:
-            db.session.rollback()
             return {"error": str(e)}, 500

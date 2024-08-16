@@ -33,24 +33,23 @@ class UserRepository:
 
     @staticmethod
     def create_user(data):
-        """
-        Create a new user.
+        """Create a new user."""
+        if not isinstance(data, dict):
+            raise TypeError("Data should be a dictionary.")
 
-        Args:
-            data (dict): A dictionary containing user details.
-
-        Returns:
-            User: The newly created User object.
-        """
-        new_user = User(
-            email=data['email'],
-            password=data['password'],
-            name=data['name'],
-            role=data['role']  # role could be 'user' or 'admin'
-        )
-        db.session.add(new_user)
-        db.session.commit()
-        return new_user
+        try:
+            new_user = User(
+                email=data.get('email'),  # Access dictionary items with .get() method
+                password=data.get('password'),
+                name=data.get('name'),
+                role=data.get('role')
+            )
+            db.session.add(new_user)
+            db.session.commit()
+            return new_user
+        except Exception as e:
+            db.session.rollback()
+            raise e
 
     @staticmethod
     def find_by_username(username):
@@ -65,3 +64,4 @@ class UserRepository:
         except SQLAlchemyError as e:
             db.session.rollback()
             return None, str(e)
+

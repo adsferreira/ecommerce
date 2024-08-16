@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89dd21c9-f279-48fb-93bd-08ded63c16cd" name="Changes" comment="Adding new code for registering admins.">
-      <change afterPath="$PROJECT_DIR$/app/routes/setup_bp.py" afterDir="false" />
+    <list default="true" id="89dd21c9-f279-48fb-93bd-08ded63c16cd" name="Changes" comment="Creating a temporary setup endpoint in order to register the first admin.">
+      <change afterPath="$PROJECT_DIR$/app/services/user_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/instance/ecommerce.db" beforeDir="false" afterPath="$PROJECT_DIR$/instance/ecommerce.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/repositories/user_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/user_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/auth_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/auth_service.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -258,7 +260,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723832359175</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Creating a temporary setup endpoint in order to register the first admin.">
+      <option name="closed" value="true" />
+      <created>1723833937584</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1723833937584</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -285,6 +295,7 @@
     <MESSAGE value="Using hashing to encrypt the users passwords." />
     <MESSAGE value="Implementing the authorization functionality of the e-commerce." />
     <MESSAGE value="Adding new code for registering admins." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding new code for registering admins." />
+    <MESSAGE value="Creating a temporary setup endpoint in order to register the first admin." />
+    <option name="LAST_COMMIT_MESSAGE" value="Creating a temporary setup endpoint in order to register the first admin." />
   </component>
 </project>

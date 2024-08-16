@@ -3,7 +3,6 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_jwt_extended import JWTManager
 
-from app.routes.setup_bp import setup_bp
 
 # Initialize SQLAlchemy, Migrate, and JWTManager
 db = SQLAlchemy()
@@ -38,6 +37,7 @@ def create_app():
         from app.routes.customer_order_routes import order_bp
         from app.routes.order_items_routes import order_items_bp
         from app.auth_routes import auth_bp
+        from app.routes.setup_bp import setup_bp
 
         app.register_blueprint(customer_bp)
         app.register_blueprint(department_bp)
@@ -45,7 +45,7 @@ def create_app():
         app.register_blueprint(order_bp)
         app.register_blueprint(order_items_bp)
         app.register_blueprint(auth_bp)
-        app.register_blueprint(setup_bp, url_prefix='/setup')
+        app.register_blueprint(setup_bp)
 
     @app.cli.command()
     def initdb():

@@ -16,7 +16,7 @@ class UserRepository:
         Returns:
             User: The User object if found, else None.
         """
-        return User.query.filter_by(email=email).first()
+        return User.query.filter_by(usrEmail=email).first()
 
     @staticmethod
     def find_by_id(user_id):
@@ -39,9 +39,11 @@ class UserRepository:
 
         try:
             new_user = User(
-                password_hash=data.get('password'),
-                name=data.get('name'),
-                role=data.get('role')
+                usrEmail=data.get('usrEmail'),
+                usrFirstName=data.get('usrFirstName'),
+                usrLastName=data.get('usrLastName'),
+                usrPasswordHash=data.get('usrPasswordHash'),
+                usrRole=data.get('usrRole')
             )
             db.session.add(new_user)
             db.session.commit()
@@ -51,8 +53,16 @@ class UserRepository:
             raise e
 
     @staticmethod
-    def find_by_username(username):
-        return User.query.filter_by(username=username).first()
+    def find_by_first_name(first_name):
+        return User.query.filter_by(usrFirstName=first_name).first()
+
+    @staticmethod
+    def find_by_last_name(last_name):
+        return User.query.filter_by(usrLastName=last_name).first()
+
+    @staticmethod
+    def find_by_full_name(first_name, last_name):
+        return User.query.filter_by(usrFirstName=first_name, usrLastName=last_name).first()
 
     @staticmethod
     def save(user):

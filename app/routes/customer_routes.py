@@ -10,9 +10,6 @@ def get_customers():
     result = [
         {
             'cusId': c.cusId,
-            'cusFirstName': c.cusFirstName,
-            'cusLastName': c.cusLastName,
-            'cusEmail': c.cusEmail,
             'cusAddress': c.cusAddress,
             'cusCity': c.cusCity,
             'cusState': c.cusState,
@@ -31,9 +28,6 @@ def get_customer(cus_id):
     if customer:
         return jsonify({
             'cusId': customer.cusId,
-            'cusFirstName': customer.cusFirstName,
-            'cusLastName': customer.cusLastName,
-            'cusEmail': customer.cusEmail,
             'cusAddress': customer.cusAddress,
             'cusCity': customer.cusCity,
             'cusState': customer.cusState,

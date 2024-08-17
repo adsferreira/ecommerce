@@ -52,11 +52,17 @@ export FLASK_ENV=development
 
     Request Body:
     {
-      "email": "string",
-      "first_name": "string",
-      "last_name": "string",
-      "password": "string"
-    }
+       "email": "john.doe@example.com",
+       "first_name": "John",
+       "last_name": "Doe",
+       "password": "newpassword456",
+       "address": "456 Maple Avenue",
+       "city": "Shelbyville",
+       "state": "IL",
+       "country": "USA",
+       "postal_code": "62565",
+       "phone_number": "+1-555-987-6543"
+   }
 
 7. User Login
 
@@ -64,8 +70,8 @@ export FLASK_ENV=development
    
    Request Body:
    {
-      "email": "string",
-      "password": "string"
+     "email": "john.doe@example.com",
+     "password": "userpassword"
    }
 
 8. Add Product (Admin only)
@@ -74,11 +80,13 @@ export FLASK_ENV=development
 
    Request Body:
    {
-      "name": "string",
-      "description": "string",
-      "price": "number",
-      "stock": "integer"
-    }
+     "prodName": "Acer Computer i7",
+     "prodDescription": "SSD 524GB e 16GB RAM",
+     "prodPrice": 5999.99,
+     "prodQuantity": 10,
+     "depId": 1
+   }
+
 
 9. Place Order
 
@@ -87,11 +95,21 @@ export FLASK_ENV=development
    Request Body:
 
    {
-      "ordFreight": "number",
-      "ordTax": "number",
-      "ordDate": "string (ISO 8601 format)",
-      "cusId": "integer"
-    }
+       "order_date": "2024-08-17",
+       "order_freight": 0.5,
+       "order_tax": 3.7,
+       "items": [
+        {
+            "product_id": 3,
+            "quantity": 5
+        },
+        {
+            "product_id": 4,
+            "quantity": 6
+        }
+       ]
+   }
+
 
 10. Update User
 
@@ -99,12 +117,28 @@ export FLASK_ENV=development
 
     Request Body:
     {
-      "email": "string",
-      "first_name": "string",
-      "last_name": "string",
-      "password": "string"
-    }
+       "email": "john.doe@example.com",
+       "password": "userpassword"  // replace with the actual password
+   }
 
+
+11. Running the Application
+
+   flask run
+
+12. Running Tests
+
+   pytest
+
+License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+Acknowledgements
+
+    Flask
+    SQLAlchemy
+    Flask-JWT-Extended
+    Werkzeug
 
 
 

@@ -30,4 +30,4 @@ class Customer(db.Model):
 
     # Establish relationship to CustomerOrder
     orders = db.relationship('CustomerOrder', backref='customer', lazy=True)
-    user = db.relationship('User', back_populates='customers')
+    user = db.relationship('User', back_populates='customer')

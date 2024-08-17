@@ -12,6 +12,8 @@ class User(db.Model):
     usrPasswordHash = Column(db.String(128), nullable=False)
     usrRole = Column(db.String(32), nullable=False)  # e.g., 'user' or 'admin'
 
+    customer = db.relationship('Customer', back_populates='user', uselist=False)
+
     def set_password(self, password):
         """Hash and set the user's password."""
         self.usrPasswordHash = generate_password_hash(password)

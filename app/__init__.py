@@ -26,6 +26,7 @@ def create_app():
         from app.models.product import Product
         from app.models.customer_order import CustomerOrder
         from app.models.order_items import OrderItems
+        from app.models.user import User
 
         # Create database tables for all models
         db.create_all()
@@ -37,7 +38,7 @@ def create_app():
         from app.routes.customer_order_routes import order_bp
         from app.routes.order_items_routes import order_items_bp
         from app.auth_routes import auth_bp
-        from app.routes.setup_bp import setup_bp
+        from app.routes.setup_routes import setup_bp
 
         app.register_blueprint(customer_bp)
         app.register_blueprint(department_bp)

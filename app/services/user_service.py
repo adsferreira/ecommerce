@@ -40,13 +40,15 @@ class UserService:
         Returns:
             dict: Access and refresh tokens, or error message.
         """
-        user = UserRepository.find_by_email(data['usrEmail'])
-        if not user or not check_password_hash(user.password, data['usrPasswordHash']):
-            return {"error": "Invalid credentials."}, 401
+        user = UserRepository.find_by_email(data['email'])
 
-        access_token = create_access_token(identity=user.id)
-        refresh_token = create_refresh_token(identity=user.id)
+        if not user or not check_password_hash(user.usrPasswordHash, data['password']):
+            return {"error": "Invalid log-in credentials."}, 401
+
+        access_token = create_access_token(identity=user.usrId)
+        refresh_token = create_refresh_token(identity=user.usrId)
         return {
+            "user": user.as_dict(),
             "access_token": access_token,
             "refresh_token": refresh_token
         }, 200
@@ -90,7 +92,7 @@ class UserService:
                 usrEmail=email,
                 usrFirstName=first_name,
                 usrLastName=last_name,
-                role='admin'
+                usrRole='admin'
             )
 
             new_admin.set_password(password)

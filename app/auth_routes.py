@@ -3,7 +3,7 @@ from flask_jwt_extended import jwt_required, get_jwt_identity
 
 from app.models.user import User
 from app import db
-from app.services.auth_service import AuthService
+from app.services.user_service import UserService
 
 auth_bp = Blueprint('auth_bp', __name__)
 
@@ -25,19 +25,17 @@ def register():
 @auth_bp.route('/login', methods=['POST'])
 def login():
     data = request.json
-    username = data.get('username')
-    password = data.get('password')
+    token = UserService.login_user(data)
 
-    user = User.query.filter_by(username=username).first()
-    if user and user.check_password(password):
-        return jsonify({"message": "Login successful", "user": user.as_dict()}), 200
+    if token:
+        return jsonify(token), 200
     return jsonify({"error": "Invalid credentials"}), 401
 
 @auth_bp.route('/profile', methods=['GET'])
 @jwt_required()
 def profile():
     user_id = get_jwt_identity()
-    response, status_code = AuthService.get_user(user_id)
+    response, status_code = UserService.get_user(user_id)
     return jsonify(response), status_code
 
 @auth_bp.route('/register-admin', methods=['POST'])
@@ -51,7 +49,5 @@ def register_admin():
         return jsonify({"error": "Admin privileges required."}), 403
 
     data = request.json
-    username = data.get('username')
-    password = data.get('password')
-    response, status_code = AuthService.register_admin(username, password)
+    response, status_code = UserService.register_admin(data)
     return jsonify(response), status_code

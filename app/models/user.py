@@ -23,8 +23,8 @@ class User(db.Model):
     def as_dict(self):
         """Convert the User object to a dictionary."""
         return {
-            'usrId': self.id,
-            'usrEmail': self.name,
+            'usrId': self.usrId,
+            'usrEmail': self.usrEmail,
             'usrFirstName': self.usrFirstName,
             'usrLastName': self.usrLastName,
             'usrPasswordHash': self.usrPasswordHash,

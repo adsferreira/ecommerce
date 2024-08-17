@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89dd21c9-f279-48fb-93bd-08ded63c16cd" name="Changes" comment="It is not necessary to empty the order data once the related variables have local scope and will be deallocated as soon as the methods have executed.">
+    <list default="true" id="89dd21c9-f279-48fb-93bd-08ded63c16cd" name="Changes" comment="Removing unused argument 'cus_id'.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/customer.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/customer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/repositories/customer_order_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/customer_order_repository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/repositories/customer_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/customer_repository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/customer_order_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/customer_order_routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/customer_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/customer_routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/customer_order_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/customer_order_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/customer_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/customer_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/repositories/user_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/user_repository.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -446,7 +440,31 @@
       <option name="project" value="LOCAL" />
       <updated>1723897907085</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Implementing support for a logged-in user to list his placed orders.">
+      <option name="closed" value="true" />
+      <created>1723901224684</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1723901224684</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Adding user id property.">
+      <option name="closed" value="true" />
+      <created>1723901549630</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1723901549630</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Removing unused argument 'cus_id'.">
+      <option name="closed" value="true" />
+      <created>1723902809329</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1723902809329</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -461,9 +479,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Using hashing to encrypt the users passwords." />
-    <MESSAGE value="Implementing the authorization functionality of the e-commerce." />
-    <MESSAGE value="Adding new code for registering admins." />
     <MESSAGE value="Creating a temporary setup endpoint in order to register the first admin." />
     <MESSAGE value="Refactoring the code to register admin users." />
     <MESSAGE value="Refactoring the model's 'User' class to include the e-mail, first name and last name properties." />
@@ -486,6 +501,9 @@
     <MESSAGE value="Adding JWT authentication decorator." />
     <MESSAGE value="Set the order data to empty after persisting it on the database, clearing the cart after the user placed an order." />
     <MESSAGE value="It is not necessary to empty the order data once the related variables have local scope and will be deallocated as soon as the methods have executed." />
-    <option name="LAST_COMMIT_MESSAGE" value="It is not necessary to empty the order data once the related variables have local scope and will be deallocated as soon as the methods have executed." />
+    <MESSAGE value="Implementing support for a logged-in user to list his placed orders." />
+    <MESSAGE value="Adding user id property." />
+    <MESSAGE value="Removing unused argument 'cus_id'." />
+    <option name="LAST_COMMIT_MESSAGE" value="Removing unused argument 'cus_id'." />
   </component>
 </project>

@@ -74,3 +74,36 @@ class UserRepository:
             db.session.rollback()
             return None, str(e)
 
+    @staticmethod
+    def update_user(user_id, data):
+        """
+        Update an existing user.
+
+        Args:
+            user_id (int): The ID of the user to be updated.
+            data (dict): A dictionary containing the fields to update and their new values.
+
+        Returns:
+            tuple: A tuple containing the updated User object and an error message (if any).
+        """
+        user = UserRepository.find_by_id(user_id)
+        if not user:
+            return None, "User not found."
+
+        try:
+            if 'email' in data:
+                user.usrEmail = data['email']
+            if 'first_name' in data:
+                user.usrFirstName = data['first_name']
+            if 'last_name' in data:
+                user.usrLastName = data['last_name']
+            if 'password' in data:
+                user.set_password(data['password'])
+            if 'role' in data:
+                user.usrRole = data['role']
+
+            db.session.commit()
+            return user, None
+        except SQLAlchemyError as e:
+            db.session.rollback()
+            return None, str(e)

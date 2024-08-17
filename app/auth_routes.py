@@ -29,6 +29,15 @@ def profile():
     response, status_code = UserService.get_user(user_id)
     return jsonify(response), status_code
 
+@auth_bp.route('/profile', methods=['PUT'])
+@jwt_required()
+def update_profile():
+    """Update the data of the logged-in user."""
+    user_id = get_jwt_identity()
+    data = request.json
+    response, status_code = UserService.update_user(user_id, data)
+    return jsonify(response), status_code
+
 @auth_bp.route('/register-admin', methods=['POST'])
 @jwt_required()
 def register_admin():

@@ -115,3 +115,27 @@ class UserService:
             }, 201
         except SQLAlchemyError as e:
             return {"error": str(e)}, 500
+
+    @staticmethod
+    def update_user(user_id, data):
+        """
+        Update an existing user's details.
+
+        Args:
+            user_id (int): The ID of the user to be updated.
+            data (dict): A dictionary containing the fields to update and their new values.
+
+        Returns:
+            dict: Update result or error message.
+        """
+        try:
+            updated_user, error = UserRepository.update_user(user_id, data)
+            if not updated_user:
+                return {"error": error}, 400
+
+            return {
+                "message": "User updated successfully.",
+                "user": updated_user.as_dict()
+            }, 200
+        except SQLAlchemyError as e:
+            return {"error": str(e)}, 500

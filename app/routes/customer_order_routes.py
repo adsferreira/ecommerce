@@ -1,15 +1,25 @@
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required, get_jwt_identity
 
+from app.auth_decorators import role_required
 from app.models.user import User
 from app.services.customer_order_service import CustomerOrderService
 
 order_bp = Blueprint('order', __name__)
 
+# @order_bp.route('/routes/orders', methods=['GET'])
+# @role_required('admin')
+# def get_all_orders():
+#     """Retrieve all customer orders."""
+#     orders = CustomerOrderService.get_all_orders()
+#     return jsonify([order.as_dict() for order in orders]), 200
+
 @order_bp.route('/routes/orders', methods=['GET'])
-def get_all_orders():
-    """Retrieve all customer orders."""
-    orders = CustomerOrderService.get_all_orders()
+@jwt_required()
+def get_all_user_orders():
+    """Retrieve all orders placed by the logged-in user."""
+    user_id = get_jwt_identity()
+    orders = CustomerOrderService.get_orders_by_user(user_id)
     return jsonify([order.as_dict() for order in orders]), 200
 
 @order_bp.route('/routes/orders/<int:ord_id>', methods=['GET'])

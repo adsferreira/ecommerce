@@ -1,8 +1,12 @@
+from datetime import datetime
+
 from sqlalchemy.exc import SQLAlchemyError
 
 from app import db
 from app.models.customer_order import CustomerOrder
 from app.models.order_items import OrderItems
+from app.services.customer_service import CustomerService
+from app.services.product_service import ProductService
 
 
 class CustomerOrderRepository:
@@ -12,6 +16,13 @@ class CustomerOrderRepository:
     def get_all_orders():
         """Retrieve all customer orders."""
         return CustomerOrder.query.all()
+
+    @staticmethod
+    def get_orders_by_user(user_id):
+        """Fetch all orders placed by a user with a given user_id."""
+        # Get the customer id using its user id
+        customer = CustomerService.get_customer_by_user_id(user_id)
+        return CustomerOrder.query.filter_by(cusId=customer.cusId).all()
 
     @staticmethod
     def get_order_by_id(ord_id):
@@ -37,9 +48,9 @@ class CustomerOrderRepository:
 
             # Create a new customer order
             new_order = CustomerOrder(
-                ordDate=order_data.get('ordDate'),
-                ordFreight=order_data.get('ordFreight'),
-                ordTax=order_data.get('ordTax'),
+                ordDate=order_data.get('order_date'),
+                ordFreight=order_data.get('order_freight'),
+                ordTax=order_data.get('order_tax'),
                 cusId=customer_id
             )
             db.session.add(new_order)
@@ -47,13 +58,13 @@ class CustomerOrderRepository:
 
             # Add order items
             for item in order_data.get('items', []):
-                if not all(k in item for k in ('prodId', 'itemQuantity', 'itemPrice')):
+                if not all(k in item for k in ('product_id', 'quantity')):
                     return {"error": "Missing item details."}, 400
                 order_item = OrderItems(
                     ordId=new_order.ordId,
-                    prodId=item.get('prodId'),
-                    itemQuantity=item.get('itemQuantity'),
-                    itemPrice=item.get('itemPrice')
+                    prodId=item.get('product_id'),
+                    itemQuantity=item.get('quantity'),
+                    itemPrice=ProductService.get_product_by_id(item.get('product_id')).prodPrice
                 )
                 db.session.add(order_item)
 

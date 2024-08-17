@@ -41,7 +41,7 @@ class Customer(db.Model):
     def as_dict(self):
         """Convert the Customer object to a dictionary."""
         return {
-            'cusId': self.usrId,
+            'cusId': self.cusId,
             'cusAddress': self.cusAddress,
             'cusCity': self.cusCity,
             'cusState': self.cusState,

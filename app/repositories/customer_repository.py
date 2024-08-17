@@ -15,6 +15,11 @@ class CustomerRepository:
         return Customer.query.get(cus_id)
 
     @staticmethod
+    def get_customer_by_user_id(usr_id):
+        """Retrieve a single customer by its user id."""
+        return Customer.query.filter_by(usrId=usr_id).first()
+
+    @staticmethod
     def add_customer(data):
         """Add a new customer."""
         new_customer = Customer(

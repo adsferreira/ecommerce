@@ -15,7 +15,8 @@ def get_customers():
             'cusState': c.cusState,
             'cusCountry': c.cusCountry,
             'cusPostalCode': c.cusPostalCode,
-            'cusPhoneNumber': c.cusPhoneNumber
+            'cusPhoneNumber': c.cusPhoneNumber,
+            'usrId': c.usrId
         }
         for c in customers
     ]

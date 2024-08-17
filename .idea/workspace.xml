@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89dd21c9-f279-48fb-93bd-08ded63c16cd" name="Changes" comment="Updating the documentation of the Customer model class.">
+    <list default="true" id="89dd21c9-f279-48fb-93bd-08ded63c16cd" name="Changes" comment="It is not necessary to empty the order data once the related variables have local scope and will be deallocated as soon as the methods have executed.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/auth_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/auth_routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/customer.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/customer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/repositories/customer_order_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/customer_order_repository.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/repositories/customer_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/customer_repository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/repositories/user_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/user_repository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/user_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/user_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/customer_order_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/customer_order_routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/customer_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/customer_routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/customer_order_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/customer_order_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/customer_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/customer_service.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -396,7 +398,55 @@
       <option name="project" value="LOCAL" />
       <updated>1723891068497</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Updating the documentation of the User model class.">
+      <option name="closed" value="true" />
+      <created>1723891265828</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1723891265828</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Updating the documentation of the User model class.">
+      <option name="closed" value="true" />
+      <created>1723891371135</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1723891371135</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Functionality for registering a new regular user.">
+      <option name="closed" value="true" />
+      <created>1723891585857</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1723891585857</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Adding JWT authentication decorator.">
+      <option name="closed" value="true" />
+      <created>1723894022573</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1723894022573</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Set the order data to empty after persisting it on the database, clearing the cart after the user placed an order.">
+      <option name="closed" value="true" />
+      <created>1723897546176</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1723897546176</updated>
+    </task>
+    <task id="LOCAL-00036" summary="It is not necessary to empty the order data once the related variables have local scope and will be deallocated as soon as the methods have executed.">
+      <option name="closed" value="true" />
+      <created>1723897907085</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1723897907085</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -411,11 +461,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Initial authorization decorator defining the role required for specific functions of the e-commerce system." />
-    <MESSAGE value="Placing the authorization API on the root directory in order to keep a smaller URL when users want to log in." />
-    <MESSAGE value="Including the authorization blueprint and JWT (JSON Web Token) for improve the security of transmitting information." />
-    <MESSAGE value="Decorating the product endpoints with role_required in order to give the right access according to the user in the session." />
-    <MESSAGE value="Added Flask-JWT-Extended requirement in the 'requirements.txt' file." />
     <MESSAGE value="Using hashing to encrypt the users passwords." />
     <MESSAGE value="Implementing the authorization functionality of the e-commerce." />
     <MESSAGE value="Adding new code for registering admins." />
@@ -436,6 +481,11 @@
     <MESSAGE value="Refactoring code to support admin login and test functionalities which require admin privileges." />
     <MESSAGE value="Correcting the User's property 'role' to 'usrRole'." />
     <MESSAGE value="Updating the documentation of the Customer model class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updating the documentation of the Customer model class." />
+    <MESSAGE value="Updating the documentation of the User model class." />
+    <MESSAGE value="Functionality for registering a new regular user." />
+    <MESSAGE value="Adding JWT authentication decorator." />
+    <MESSAGE value="Set the order data to empty after persisting it on the database, clearing the cart after the user placed an order." />
+    <MESSAGE value="It is not necessary to empty the order data once the related variables have local scope and will be deallocated as soon as the methods have executed." />
+    <option name="LAST_COMMIT_MESSAGE" value="It is not necessary to empty the order data once the related variables have local scope and will be deallocated as soon as the methods have executed." />
   </component>
 </project>

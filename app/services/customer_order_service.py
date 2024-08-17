@@ -15,6 +15,11 @@ class CustomerOrderService:
         return CustomerOrderRepository.get_all_orders()
 
     @staticmethod
+    def get_orders_by_user(user_id):
+        """Retrieve all orders for the given user_id."""
+        return CustomerOrderRepository.get_orders_by_user(user_id)
+
+    @staticmethod
     def get_order_by_id(ord_id):
         """
         Retrieve a single customer order by its ID.
@@ -68,7 +73,7 @@ class CustomerOrderService:
         """
         # Convert ordDate to a Python date object
         try:
-            ord_date_str = order_data.get('ordDate')
+            ord_date_str = order_data.get('order_date')
             if ord_date_str:
                 ord_date = datetime.strptime(ord_date_str, '%Y-%m-%d').date()
             else:
@@ -77,7 +82,7 @@ class CustomerOrderService:
             return {"error": "Invalid date format. Use YYYY-MM-DD."}, 400
 
         # Update order data with the converted date
-        order_data['ordDate'] = ord_date
+        order_data['order_date'] = ord_date
 
         # Call the repository to handle database operations
         return CustomerOrderRepository.place_order(customer_id, order_data)

@@ -12,6 +12,10 @@ class CustomerService:
         return CustomerRepository.get_customer_by_id(cus_id)
 
     @staticmethod
+    def get_customer_by_user_id(usr_id):
+        return CustomerRepository.get_customer_by_user_id(usr_id)
+
+    @staticmethod
     def add_customer(data):
         return CustomerRepository.add_customer(data)
 

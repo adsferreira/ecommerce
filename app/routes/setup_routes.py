@@ -1,7 +1,7 @@
-# app/routes/setup_bp.py
+# app/routes/setup_routes.py
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import create_access_token
-from app.services.auth_service import AuthService
+from app.services.user_service import UserService
 
 setup_bp = Blueprint('setup', __name__)
 
@@ -19,5 +19,5 @@ def setup_admin():
     if not username or not password:
         return jsonify({"error": "Username and password are required."}), 400
 
-    response, status_code = AuthService.register_admin(username, password)
+    response, status_code = UserService.register_admin(username, password)
     return jsonify(response), status_code

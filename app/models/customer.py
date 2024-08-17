@@ -12,10 +12,16 @@ class Customer(db.Model):
         cusCountry (str): The country of the customer's address, cannot be null.
         cusPostalCode (str): The postal code of the customer's address, cannot be null.
         cusPhoneNumber (str): The phone number of the customer, can be null.
+        usrId (int): Foreign key referencing the 'user' table's primary key, indicating the associated user.
 
     Relationships:
         orders: One-to-Many relationship with the CustomerOrder model.
                 This allows for retrieving all orders made by a customer.
+        user: One-to-One relationship with the User model.
+              This links a customer to their corresponding user account.
+
+    Methods:
+        as_dict: Convert the Customer object to a dictionary representation.
     """
     __tablename__ = 'customer'
 
@@ -31,3 +37,16 @@ class Customer(db.Model):
     # Establish relationship to CustomerOrder
     orders = db.relationship('CustomerOrder', backref='customer', lazy=True)
     user = db.relationship('User', back_populates='customer')
+
+    def as_dict(self):
+        """Convert the Customer object to a dictionary."""
+        return {
+            'cusId': self.usrId,
+            'cusAddress': self.cusAddress,
+            'cusCity': self.cusCity,
+            'cusState': self.cusState,
+            'cusCountry': self.cusCountry,
+            'cusPostalCode': self.cusPostalCode,
+            'cusPhoneNumber': self.cusPhoneNumber,
+            'usrId': self.usrId
+        }

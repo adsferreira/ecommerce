@@ -18,13 +18,13 @@ class CustomerRepository:
     def add_customer(data):
         """Add a new customer."""
         new_customer = Customer(
-            cusAddress=data['cusAddress'],
-            cusCity=data['cusCity'],
-            cusState=data['cusState'],
-            cusCountry=data['cusCountry'],
-            cusPostalCode=data['cusPostalCode'],
-            cusPhoneNumber=data.get('cusPhoneNumber'),
-            usrId=data['usrId']
+            cusAddress=data['address'],
+            cusCity=data['city'],
+            cusState=data['state'],
+            cusCountry=data['country'],
+            cusPostalCode=data['postal_code'],
+            cusPhoneNumber=data.get('phone_number'),
+            usrId=data['user_id']
         )
         db.session.add(new_customer)
         db.session.commit()

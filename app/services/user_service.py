@@ -1,6 +1,8 @@
 from sqlalchemy.exc import SQLAlchemyError
 
+from app.models.customer import Customer
 from app.models.user import User
+from app.repositories.customer_repository import CustomerRepository
 from app.repositories.user_repository import UserRepository
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_jwt_extended import create_access_token, create_refresh_token
@@ -18,16 +20,25 @@ class UserService:
         Returns:
             dict: Registration result or error message.
         """
-        if UserRepository.find_by_email(data['usrEmail']):
+        if UserRepository.find_by_email(data['email']):
             return {"error": "Email already in use."}, 400
 
-        hashed_password = generate_password_hash(data['usrPasswordHash'])
+        # Ensure password is hashed in production
+        hashed_password = generate_password_hash(data['password'])
         data['password'] = hashed_password
-        user = UserRepository.create_user(data)
-        return {
-            "message": "User registered successfully!",
-            "user_id": user.id
-        }, 201
+
+        try:
+           new_user = UserRepository.create_user(data)
+           data['user_id'] = new_user.usrId
+           new_customer = CustomerRepository.add_customer(data)
+
+           return {
+               "message": "User registered successfully.",
+               "user": new_user.as_dict(),
+               "customer": new_customer.as_dict()
+           }, 201
+        except SQLAlchemyError as e:
+            return {"error": str(e)}, 500
 
     @staticmethod
     def login_user(data):

@@ -39,11 +39,11 @@ class UserRepository:
 
         try:
             new_user = User(
-                usrEmail=data.get('usrEmail'),
-                usrFirstName=data.get('usrFirstName'),
-                usrLastName=data.get('usrLastName'),
-                usrPasswordHash=data.get('usrPasswordHash'),
-                usrRole=data.get('usrRole')
+                usrEmail=data['email'],
+                usrFirstName=data['first_name'],
+                usrLastName=data['last_name'],
+                usrPasswordHash=data['password'],
+                usrRole=data.get('role', 'user')  # Default role is 'user'
             )
             db.session.add(new_user)
             db.session.commit()

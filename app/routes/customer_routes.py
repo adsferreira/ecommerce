@@ -34,7 +34,8 @@ def get_customer(cus_id):
             'cusState': customer.cusState,
             'cusCountry': customer.cusCountry,
             'cusPostalCode': customer.cusPostalCode,
-            'cusPhoneNumber': customer.cusPhoneNumber
+            'cusPhoneNumber': customer.cusPhoneNumber,
+            'usrId': customer.usrId
         })
     return jsonify({'error': 'Customer not found'}), 404
 

@@ -45,7 +45,7 @@ def register_admin():
     current_user_id = get_jwt_identity()
     current_user = User.query.get(current_user_id)
 
-    if current_user.role != 'admin':
+    if current_user.usrRole != 'admin':
         return jsonify({"error": "Admin privileges required."}), 403
 
     data = request.json

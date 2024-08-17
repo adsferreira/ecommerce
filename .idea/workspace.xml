@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89dd21c9-f279-48fb-93bd-08ded63c16cd" name="Changes" comment="Implementing the support for updating the user data.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="89dd21c9-f279-48fb-93bd-08ded63c16cd" name="Changes" comment="Adding unit tests to validate functions like user registration, product addition, and order placement." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -471,7 +469,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723903469657</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Adding unit tests to validate functions like user registration, product addition, and order placement.">
+      <option name="closed" value="true" />
+      <created>1723905134411</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1723905134411</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -486,7 +492,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Refactoring the code to register admin users." />
     <MESSAGE value="Refactoring the model's 'User' class to include the e-mail, first name and last name properties." />
     <MESSAGE value="Refactoring the model's 'Customer' class by removing the e-mail, first name and last name properties, and add a 'usrId' property representing a foreign key of the user table." />
     <MESSAGE value="Refactoring the repository's 'CustomerRepository' class by removing the e-mail, first name and last name properties, and add a 'usrId' property representing a foreign key of the user table." />
@@ -511,6 +516,7 @@
     <MESSAGE value="Adding user id property." />
     <MESSAGE value="Removing unused argument 'cus_id'." />
     <MESSAGE value="Implementing the support for updating the user data." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementing the support for updating the user data." />
+    <MESSAGE value="Adding unit tests to validate functions like user registration, product addition, and order placement." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding unit tests to validate functions like user registration, product addition, and order placement." />
   </component>
 </project>

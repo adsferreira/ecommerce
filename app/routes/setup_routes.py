@@ -1,11 +1,9 @@
-# app/routes/setup_routes.py
 from flask import Blueprint, request, jsonify
-from flask_jwt_extended import create_access_token
 from app.services.user_service import UserService
 
 setup_bp = Blueprint('setup', __name__)
 
-@setup_bp.route('/setup/admin', methods=['POST'])
+@setup_bp.route('/routes/admin', methods=['POST'])
 def setup_admin():
     # Check for setup password
     setup_password = request.headers.get('X-Setup-Password')
@@ -13,11 +11,13 @@ def setup_admin():
         return jsonify({"error": "Unauthorized"}), 403
 
     data = request.json
-    username = data.get('username')
+    email = data.get('email')
+    first_name = data.get('first_name')
+    last_name = data.get('last_name')
     password = data.get('password')
 
-    if not username or not password:
-        return jsonify({"error": "Username and password are required."}), 400
+    if not email or not first_name or not last_name or not password:
+        return jsonify({"error": "First and last names, e-mail and password are required."}), 400
 
-    response, status_code = UserService.register_admin(username, password)
+    response, status_code = UserService.register_admin(data)
     return jsonify(response), status_code

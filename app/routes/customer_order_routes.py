@@ -34,7 +34,6 @@ def place_order():
     customer_id = user.customer.cusId  # Retrieve the customer's ID from the user relationship
     order_data = request.json  # Get JSON data from the request
     result, status_code = CustomerOrderService.place_order(customer_id, order_data)  # Use service layer
-    order_data = {}  # Clear the order data after processing
     return jsonify(result), status_code  # Return the result and appropriate status code
 
 @order_bp.route('/routes/orders/<int:ord_id>', methods=['PUT'])

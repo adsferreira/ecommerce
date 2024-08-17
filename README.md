@@ -4,6 +4,8 @@
 
 This is a Python-based e-commerce system built using Flask. The application features user authentication, product management, and order processing functionalities. The system allows users to register, log in, and place orders. Admins have additional privileges to manage products and oversee the application.
 
+You can clone this repo by using the following command: https://github.com/adsferreira/ecommerce.git
+
 ## Features
 
 - **User Authentication**: Register, log in, and manage user accounts.
